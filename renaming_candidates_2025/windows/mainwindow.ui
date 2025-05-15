@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>593</width>
+    <height>313</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>Selection du dossier d'entrée</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,1,5">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Dossier :</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="toolButton_browseInput">
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_input">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="title">
+       <string>Selection du dossier de sortie</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,1,5">
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Dossier :</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="toolButton_browseOutput">
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_output">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="title">
+       <string>Selection du fichier d'anonymat</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,1,5">
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Fichier :</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="toolButton_browseFile">
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_file">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBox_4">
+      <property name="title">
+       <string>Convertion</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="19,1,80">
+       <item>
+        <widget class="QPushButton" name="pushButton_convert">
+         <property name="text">
+          <string>Convertir</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QProgressBar" name="progressBar_convertion">
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="format">
+          <string>%p% des fichiers convertis</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>593</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>toolButton_browseInput</sender>
+   <signal>released()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>browseInputFolder()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>67</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolButton_browseOutput</sender>
+   <signal>released()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>browseOutputFolder()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>131</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolButton_browseFile</sender>
+   <signal>released()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>browseConvertFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>195</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_convert</sender>
+   <signal>released()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>convert()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>70</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>296</x>
+     <y>156</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>browseInputFolder()</slot>
+  <slot>browseOutputFolder()</slot>
+  <slot>browseConvertFile()</slot>
+  <slot>convert()</slot>
+ </slots>
+</ui>
